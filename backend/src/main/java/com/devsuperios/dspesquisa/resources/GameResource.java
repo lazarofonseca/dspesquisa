@@ -23,7 +23,6 @@ public class GameResource {
 		List<GameDTO> list = gameService.findAll();
 
 		return ResponseEntity.ok().body(list);
-
 	}
 
 }
