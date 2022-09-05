@@ -3,7 +3,7 @@ package com.devsuperios.dspesquisa.repositories;
 import java.time.Instant;
 
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -15,6 +15,6 @@ public interface RecordRepository extends JpaRepository<Record, Long>{
 			+ "(:minDate IS NULL OR obj.moment >= :minDate) "
 			+ "AND "
 			+ "(:maxDate IS NULL OR obj.moment <= :maxDate)")
-	Page<Record> findByMoments(Instant minDate, Instant maxDate, PageRequest pageRequest);
+	Page<Record> findByMoments(Instant minDate, Instant maxDate, Pageable pageable);
 
 }
